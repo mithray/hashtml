@@ -46,7 +46,7 @@ The minification should either follow a set standard so that browsers eventually
 		--text-color: white;
 	}
 	<ul>
-		<li><Home/li>
+		<li>Home</li>
 		<li>About</li>
 		<li>Navigation</li>
 	</ul>
