@@ -1,10 +1,6 @@
-## Elsig
-Elsig, Element Signature.
-
 ## HashTML
-Hash Appended Signature Hypter Text Markup Language
-Hash = Hash Appended Signature HTML
-Hashed and Signed HTML
+
+Hashed and Signed Hypertext Markup Language
 
 HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders.It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
 
@@ -132,5 +128,3 @@ if(verified !== true){
 }
 ```
 HashTML is a new way to sign HTML Elements/Components that verify with a hash that that section of html has been hashed and signed as secure and is compliant with arbitrary standards. As it is possible for arbitrary user code to manipulate the DOM, the entire DOM would need to be signed in order to guarantee compliance. 
-
-It
