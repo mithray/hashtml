@@ -22,7 +22,7 @@ To reach this level an HTML document must meet the W3C Standards for all externa
 
 ### L3 - W3C Compliant & Signatures
 
-To reach this level, an HTML document must be W3C compliant, as well as include signatures for all hashed components. The point at which multiple signatures begin being utilized is the point at which the wider open source community become collaborators toward improving web privacy and security.
+To reach this level, an HTML document must be W3C compliant, as well as include signatures for all hashed components. The point at which multiple signatures begin being utilized is the point at which the wider open source community join together in collaborating toward improving web privacy and security.
 
 ### L4 - HashTML
 
