@@ -42,7 +42,8 @@ The minification should either follow a set standard so that browsers eventually
 ``` html
 <nav>
 	nav {
-		--var = blue
+		--background-color: black;
+		--text-color: white;
 	}
 	<ul>
 		<li><Home/li>
@@ -57,7 +58,8 @@ The minification should either follow a set standard so that browsers eventually
 ``` html
 <nav id="hashme">
 	nav {
-		--var = blue
+		--background-color: black;
+		--text-color: white;
 	}
 	<ul>
 		<li></li>
@@ -81,7 +83,7 @@ The minification should either follow a set standard so that browsers eventually
 </nav>
 ```
 
-### Step 3 Remove CSS Tags
+### Step 3 Remove Empty CSS Tags
 
 ``` html
 <nav id="hashme">
@@ -92,10 +94,13 @@ The minification should either follow a set standard so that browsers eventually
 	</ul>
 </nav>
 ```
+
 ### Step 4 Remove Whitespace
+
 ``` html
 <nav id="hashme"><ul><li></li><li></li><li></li></ul></nav>
 ```
+
 ### Step 5 InnerHTML is extracted from the parent component.
 
 Building the template on the server side:
@@ -107,10 +112,12 @@ let signature = privateKey.sign(hash)
 elem[integrity=hash]
 elem[signature=signature]
 ```
+
 The resulting html component:
 ``` html
 <nav id="hashme" integrity="f3bd8e3a82b..." signature="4ubkf7..."><ul><li></li><li></li><li></li></ul></nav>
 ```
+
 Verifying the hash and signature on client side could either produce an alert on failing to load, silently fail to load the resource, or could provide a fallback:
 
 ``` javascript
