@@ -40,15 +40,15 @@ It's true that no web page is identical(probably), yet HashTML will exclude `tex
 The minification should either follow a set standard so that browsers eventually have the chance to comply, or a javascript file should be included that allows the browser to verify the hash and signature programmitically. This project is attempting to make such resources available.
 
 ``` html
-<nav>
+<nav id="hashme">
 	nav {
 		--background-color: black;
 		--text-color: white;
 	}
 	<ul>
-		<li>Home</li>
-		<li>About</li>
-		<li>Navigation</li>
+		<li id="home">Home</li>
+		<li id="about">About</li>
+		<li id="contact">Contact</li>
 	</ul>
 </nav>
 ```
@@ -62,9 +62,9 @@ The minification should either follow a set standard so that browsers eventually
 		--text-color: white;
 	}
 	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li id="home"></li>
+		<li id="about"></li>
+		<li id="contact"></li>
 	</ul>
 </nav>
 ```
@@ -76,14 +76,16 @@ The minification should either follow a set standard so that browsers eventually
 	nav {
 	}
 	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li id="home"></li>
+		<li id="about"></li>
+		<li id="contact"></li>
 	</ul>
 </nav>
 ```
 
-### Step 3 Remove Empty CSS Tags
+Because we are including CSS and Javascript content as part of the hash, with the exception of variables, we can also take out the id and classes.
+
+### Step 3 Remove Empty CSS Tags, ids, classes
 
 ``` html
 <nav id="hashme">
@@ -95,10 +97,10 @@ The minification should either follow a set standard so that browsers eventually
 </nav>
 ```
 
-### Step 4 Remove Whitespace
+### Step 4 Pass through html-minifier
 
 ``` html
-<nav id="hashme"><ul><li></li><li></li><li></li></ul></nav>
+<nav id=hashme><ul><li><li><li></ul></nav>
 ```
 
 ### Step 5 InnerHTML is extracted from the parent component.
