@@ -40,7 +40,7 @@ It's true that no web page is identical(probably), yet HashTML will exclude `tex
 The minification should either follow a set standard so that browsers eventually have the chance to comply, or a javascript file should be included that allows the browser to verify the hash and signature programmitically. This project is attempting to make such resources available.
 
 ``` html
-<nav id="hashme">
+<nav class="HashTML">
 	nav {
 		--background-color: black;
 		--text-color: white;
@@ -56,7 +56,7 @@ The minification should either follow a set standard so that browsers eventually
 ### Step 1 Remove textContent
 
 ``` html
-<nav id="hashme">
+<nav class="HashTML">
 	nav {
 		--background-color: black;
 		--text-color: white;
@@ -72,7 +72,7 @@ The minification should either follow a set standard so that browsers eventually
 ### Step 2 Remove Variables
 
 ``` html
-<nav id="hashme">
+<nav class="HashTML">
 	nav {
 	}
 	<ul>
@@ -88,7 +88,7 @@ Because we are including CSS and Javascript content as part of the hash, with th
 ### Step 3 Remove Empty CSS Tags, ids, classes
 
 ``` html
-<nav id="hashme">
+<nav class="hashme">
 	<ul>
 		<li></li>
 		<li></li>
@@ -107,17 +107,19 @@ Because we are including CSS and Javascript content as part of the hash, with th
 
 Building the template on the server side:
 ``` javascript
-let elem = document.querySelector("#hashme")
-let inner = elem.innerHTML
-let hash = inner.hash("sha256")
-let signature = privateKey.sign(hash)
-elem[integrity=hash]
-elem[signature=signature]
+let elems = document.querySelector(".HashTML")
+for(elem in elems){
+	let inner = elem.innerHTML
+	let hash = inner.hash("sha256")
+	let signature = privateKey.sign(hash)
+	elem[integrity=hash]
+	elem[signature=signature]	
+}
 ```
 
 The resulting html component:
 ``` html
-<nav id="hashme" integrity="f3bd8e3a82b..." signature="4ubkf7..."><ul><li></li><li></li><li></li></ul></nav>
+<nav class="HashTML" integrity="f3bd8e3a82b..." signature="4ubkf7..."><ul><li></li><li></li><li></li></ul></nav>
 ```
 
 Verifying the hash and signature on client side could either produce an alert on failing to load, silently fail to load the resource, or could provide a fallback:
