@@ -1,5 +1,7 @@
 ## HashTML
 
+[DISCLAIMER: nothing here is actually working, it's just a spec I have started to draft, don't waste your time downloading, it's just a readme.]
+
 Hashed and Signed Hypertext Markup Language
 
 HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders.It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
