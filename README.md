@@ -35,7 +35,7 @@ To be fully compliant, an HTML document must include at minimum a hash and a sig
 
 "You can't sign hash and sign HTML Tags!!!! They change all the time!!!! No webpage is identical!!!"
 
-It's true that no web page is identical(probably), yet HashTML will exclude `textContent` from the html tags, as well as stripping for whitespace, public standards for html minification, and strip the web component designers choice of css variables from the hash. Ultimately, it will not be a lot different from the copying of design patterns that already happens. There will be less flexibilty in changing components, but you your components can be signed in a build step and a single signature for the whole document is sufficient to meet the recommendation.
+It's true that no web page is identical( *cough* ...bootstrap), yet HashTML will exclude `textContent` from the html tags, as well as stripping for whitespace, public standards for html minification, and strip the web component designers choice of css variables from the hash. Ultimately, it will not be a lot different from the copying of design patterns that already happens. There will be less flexibilty in changing components, but you your components can be signed in a build step and a single signature for the whole document is sufficient to meet the recommendation.
 
 ## Component Verification
 

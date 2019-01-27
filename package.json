@@ -1,6 +1,6 @@
 {
   "name": "@mithray/hashtml",
-  "version": "0.0.1",
+  "version": "0.0.10001",
   "description": "Hashed and Signed Hypertext Markup Language",
   "main": "index.js",
   "scripts": {
