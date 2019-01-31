@@ -3,7 +3,7 @@ const jsdom 	= require("jsdom")
 const { JSDOM } = jsdom
 const fs 		= require('fs')
 const crypto 	= require('crypto-browserify')
-const pretty 	= require('pretty')
+const cleaner	= require('clean-html')
 const path		= require('path')
 
 let html_path = path.join( __dirname, 'test.html')
@@ -94,4 +94,7 @@ console.log(`
 Output
 ------------------
 `)
-console.log(pretty(hashed_dom,{ocd: true}))
+
+cleaner.clean(hashed_dom, (html) => {
+	console.log(html)
+})
