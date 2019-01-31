@@ -84,7 +84,9 @@ async function addHashes( filepath_html, options){
 		if (options.output){
 			fs.writeFileSync(options.output)
 		} else {
-			console.log(color.success('final output'))
+			if (options.verbose){
+				console.log(color.success('final output'))
+			}
 			console.log(clean_html)
 		}
 		return clean_html
