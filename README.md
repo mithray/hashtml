@@ -11,9 +11,9 @@
 
 ## <a name="summary"></a>[Summary](#toc)
 
-[DISCLAIMER: nothing here is actually working, it's just a spec I have started to draft, don't waste your time downloading, it's just a readme.]
+[DISCLAIMER: presently, I have a global function for adding hashes to components, nothing else is actually working, it's just a spec I have started to draft, it's mostly a readme.]
 
-Hashed and Signed Hypertext Markup Language
+*Hashed and Signed Hypertext Markup Language*
 
 HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders.It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
 
@@ -37,8 +37,9 @@ Currently well behaving Certificate Authorities(CAs) provide evidence that a web
 It's true that no web page is identical( \**cough*\* ...bootstrap), yet HashTML will perform a number of operations on the HTML component before hashing, to make the component more shareable. Examples of this are removing `textContent` from the HTML component, stripping whitespace, using a common, published standard for html minification, and stripping the web component's designer's choice of css variables from the hash. Ultimately, it will not be a lot different from the copying of design patterns which already happens. There will be less flexibilty in changing components, but your components can be signed in a build step and a single signature for the whole document is sufficient to meet the recommendation.
 
 ## <a name="server_use"></a>[Server Use](#toc)
+*basic html subresource hasher is implemented*
 
-The The minification should either follow a specified standard of minification, or provide a link to a place where the minification rules are specified, so the user agents, or scripts for verification sent to the user, are able to minify the HashTML element and derive the hash and check the signatures automatically on the client side. 
+The minification should either follow a specified standard of minification, or provide a link to a place where the minification rules are specified, so the user agents, or scripts for verification sent to the user, are able to minify the HashTML element and derive the hash and check the signatures automatically on the client side. 
 
 So far the process goes as follows:
 1. Identify each element of the html file with a `class="HashTML"`
@@ -79,6 +80,7 @@ To a resulting minified, html component such as below:
 ```
 
 ## <a name="client_use"></a>[Client Use](#toc)
+*not implemented*
 
 Verifying the hash and signature on client side could either produce an alert on failing to load, silently fail to load the resource, or could provide a fallback. In order for the client to verify the component, they perform the same operations that the server performs on the component, in order that they can generate the same hash, and then verify the attached signatures, which are likely to be stored online distributed databases such as distributed ledgers. Upon verifying hashes and signatures, the user-agent will then have a trust rating attached to the component that they can choose to accept or reject.
 
@@ -95,3 +97,18 @@ To reach this level, an HTML document must be W3C compliant, as well as include 
 
 ### L4 - HashTML
 To be fully compliant, an HTML document must include at minimum a hash and a signature in it's HTML tag, but any child tags of the html tag may also be signed.
+ 
+## <a name="roadmap"></a>[Roadmap](#toc)
+
+### Server Use
+
+* implemented signing components with private keys
+* link to component libraries
+
+### Client Use
+
+* Include javascript scripts to send to users, these are sent in the build step, but executed by the user agents. These scripts can
+	* minify components
+	* hash the minified component to check if the hash is the same
+	* verify the signatures against a public key infrastructure
+	* implement several alternative actions of how to manage trusted or untrusted components

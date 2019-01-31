@@ -1,6 +1,6 @@
 {
   "name": "@mithray/hashtml",
-  "version": "0.0.10010",
+  "version": "0.0.10011",
   "description": "Hashed and Signed Hypertext Markup Language",
   "main": "index.js",
   "scripts": {
@@ -11,22 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mithray/HashTML.git"
+    "url": "git+https://github.com/mithray/hashtml.git"
   },
   "keywords": [
     "Hashed",
-    "and",
+	"Serity",
     "Signed",
-    "Hypertext",
-    "Markup",
-    "Language"
+    "HtML",
+    "Compliance",
+    "W3C",
+	"SRI",
+	"Subresource Integrity"
   ],
-  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/HashTML)",
+  "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/hashtml)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/mithray/HashTML/issues"
+    "url": "https://github.com/mithray/hashtml/issues"
   },
-  "homepage": "https://github.com/mithray/HashTML#readme",
+  "homepage": "https://github.com/mithray/hashtml",
   "dependencies": {
     "boxen": "^2.1.0",
     "chalk": "^2.4.2",
