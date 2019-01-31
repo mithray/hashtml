@@ -4,7 +4,11 @@
   "description": "Hashed and Signed Hypertext Markup Language",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hashtml": "node ./bin/hashtml.js"
+  },
+  "bin": {
+    "hashtml": "./bin/hashtml.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +29,10 @@
   },
   "homepage": "https://github.com/mithray/HashTML#readme",
   "dependencies": {
+    "boxen": "^2.1.0",
     "chalk": "^2.4.2",
     "clean-html": "^1.5.0",
+    "commander": "^2.19.0",
     "crypto-browserify": "^3.12.0",
     "html-minifier": "^3.5.21",
     "jsdom": "^13.2.0"
