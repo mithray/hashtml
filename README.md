@@ -1,6 +1,6 @@
 # HashTML
 
-<a name="contents"></a>
+<a name="toc"></a>
 
 1. [Summary](#summary)
 2. [Basic Use](#basic_use)
@@ -9,7 +9,7 @@
 5. [Client Use](#client_use)
 6. [Levels of Implementation](#levels_of_implementation)
 
-## <a name="summary"></a><a href="contents">Summary</a>
+## <a name="summary"></a><a href="toc">Summary</a>
 
 [DISCLAIMER: nothing here is actually working, it's just a spec I have started to draft, don't waste your time downloading, it's just a readme.]
 
@@ -17,14 +17,14 @@ Hashed and Signed Hypertext Markup Language
 
 HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders.It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
 
-## <a name="basic_use"></a><a href="contents">Basic Use</a>
+## <a name="basic_use"></a><a href="toc">Basic Use</a>
 
 ``` bash
 npm install --global @mithray/hashtml
 hashtml main.html
 ```
 
-## <a name="motivation"></a><a href="contents">Motivation</a>
+## <a name="motivation"></a><a href="toc">Motivation</a>
 
 ### "But why?" 
 
@@ -36,7 +36,7 @@ Currently well behaving Certificate Authorities(CAs) provide evidence that a web
 
 It's true that no web page is identical( \**cough*\* ...bootstrap), yet HashTML will perform a number of operations on the HTML component before hashing, to make the component more shareable. Examples of this are removing `textContent` from the HTML component, stripping whitespace, using a common, published standard for html minification, and stripping the web component's designer's choice of css variables from the hash. Ultimately, it will not be a lot different from the copying of design patterns which already happens. There will be less flexibilty in changing components, but your components can be signed in a build step and a single signature for the whole document is sufficient to meet the recommendation.
 
-## <a name="server_use"></a><a href="contents">Server Use</a>
+## <a name="server_use"></a><a href="toc">Server Use</a>
 
 The The minification should either follow a specified standard of minification, or provide a link to a place where the minification rules are specified, so the user agents, or scripts for verification sent to the user, are able to minify the HashTML element and derive the hash and check the signatures automatically on the client side. 
 
@@ -78,11 +78,11 @@ To a resulting minified, html component such as below:
 <nav class="HashTML" integrity="f3bd8e3a82b..." signature="4ubkf7..."><style>nav{background-color: var(--main-bg-color);color: var(--main-font-color);}</style><ul><li></li><li></li><li></li></ul></nav>
 ```
 
-## <a name="client_use"></a><a href="contents">Client Use</a>
+## <a name="client_use"></a><a href="toc">Client Use</a>
 
 Verifying the hash and signature on client side could either produce an alert on failing to load, silently fail to load the resource, or could provide a fallback. In order for the client to verify the component, they perform the same operations that the server performs on the component, in order that they can generate the same hash, and then verify the attached signatures, which are likely to be stored online distributed databases such as distributed ledgers. Upon verifying hashes and signatures, the user-agent will then have a trust rating attached to the component that they can choose to accept or reject.
 
-## <a name="levels_of_implementation"></a><a href="contents">Levels of Implementation</a>
+## <a name="levels_of_implementation"></a><a href="toc">Levels of Implementation</a>
 
 ### L1 - Partial
 At this level, an HTML document will contain some hashed and/or signed external resources, a partial implementation of W3C Standards. This should at least slightly increase the security. 

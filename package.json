@@ -1,10 +1,9 @@
 {
   "name": "@mithray/hashtml",
-  "version": "0.0.10008",
+  "version": "0.0.10009",
   "description": "Hashed and Signed Hypertext Markup Language",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "hashtml": "node ./bin/hashtml.js"
   },
   "bin": {
