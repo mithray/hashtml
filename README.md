@@ -12,11 +12,11 @@
 
 ## <a name="summary"></a>[Summary](#toc)
 
-[DISCLAIMER: presently, I have a global function for adding hashes to components, nothing else is actually working, it's just a spec I have started to draft, it's mostly a readme.]
+[DISCLAIMER: presently, there is a global function for adding hashes to components, nothing else has yet been implemented. So far it's mostly just a draft specification.]
 
 *Hashed and Signed Hypertext Markup Language*
 
-HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders.It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
+HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders. It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
 
 ## <a name="basic_use"></a>[Basic Use](#toc)
 
@@ -96,7 +96,7 @@ To reach this level an HTML document must meet the W3C Standards for all externa
 ### L3 - W3C Compliant & Signatures
 To reach this level, an HTML document must be W3C compliant, as well as include signatures for all hashed components. The point at which multiple signatures begin being utilized is the point at which the wider open source community join together in collaborating toward improving web privacy and security.
 
-### L4 - HashTML
+### L4 - HashTML Compliant
 To be fully compliant, an HTML document must include at minimum a hash and a signature in it's HTML tag, but any child tags of the html tag may also be signed.
  
 ## <a name="roadmap"></a>[Roadmap](#toc)
