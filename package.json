@@ -4,14 +4,14 @@
   "description": "Hashed and Signed Hypertext Markup Language",
   "main": "index.js",
   "scripts": {
-    "hashtml": "node ./bin/hashtml.js"
+  "hashtml": "node ./bin/hashtml.js"
   },
   "bin": {
-    "hashtml": "./bin/hashtml.js"
+  "hashtml": "./bin/hashtml.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mithray/hashtml.git"
+  "type": "git",
+  "url": "git+https://github.com/mithray/hashtml.git"
   },
   "keywords": [
     "Hashed",
@@ -19,22 +19,22 @@
     "Html",
     "Compliance",
     "W3C",
-	"SRI",
-	"Subresource Integrity"
+    "SRI",
+    "Subresource Integrity"
   ],
   "author": "Raymond Smith <mithray@protonmail.com> (mithray.github.io/hashtml)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/mithray/hashtml/issues"
+  "url": "https://github.com/mithray/hashtml/issues"
   },
   "homepage": "https://github.com/mithray/hashtml",
   "dependencies": {
-    "boxen": "^2.1.0",
-    "chalk": "^2.4.2",
-    "clean-html": "^1.5.0",
-    "commander": "^2.19.0",
-    "crypto-browserify": "^3.12.0",
-    "html-minifier": "^3.5.21",
-    "jsdom": "^13.2.0"
+  "boxen": "^2.1.0",
+  "chalk": "^2.4.2",
+  "clean-html": "^1.5.0",
+  "commander": "^2.19.0",
+  "crypto-browserify": "^3.12.0",
+  "html-minifier": "^3.5.21",
+  "jsdom": "^13.2.0"
   }
 }
