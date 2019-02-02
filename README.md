@@ -3,7 +3,7 @@
 ## <a name="toc"></a> [Contents](#toc)
 
 1. [Summary](#summary)
-2. [Basic Use](#basic_use)
+2. [Basic Use(server side)](#basic_use)
 3. [Motivation](#motivation)
 4. [Server Use](#server_use)
 5. [Client Use](#client_use)
@@ -18,7 +18,7 @@
 
 HashTML is a standard of secure HTML where every component of an HTML page has it's contents hashed and signed by a Public Key Infrastructure(PKI) of a contributing coding community of open source auditing coders. It follows the standard of World Wide Web Consortium's(W3C) subresource integrity for hashing the contents of external documents, but extends this standard to include signatures from the open source community and to components of HTML.
 
-## <a name="basic_use"></a>[Basic Use](#toc)
+## <a name="basic_use"></a>[Basic Use(server side)](#toc)
 
 ``` bash
 npm install --global @mithray/hashtml
@@ -103,14 +103,20 @@ To be fully compliant, an HTML document must include at minimum a hash and a sig
 
 ### Server Use
 
-* [x] implement hashing of components
-* [ ] implement signing of components with private keys
-* [ ] link to component libraries
+The Server hashing and signing of components need to be easy enough that it is not a burden to developers to implement, otherwise it will not be done. This requires building hashing, and signing, of components from public repositories. 
+
+* [x] hashing of components
+* [ ] signing of components with private keys
+	* [ ] npm key
+	* [ ] github key
+	* [ ] custom key
+* [ ] integration with component libraries
 
 ### Client Use
 
-* [ ] include javascript scripts to send to users, these are sent in the build step, but executed by the user agents. These scripts can
-	* [ ] minify components
-	* [ ] hash the minified component to check if the hash is the same
-	* [ ] verify the signatures against a public key infrastructure
-	* [ ] implement several alternative actions of how to manage trusted or untrusted components
+A javascript script needs to be sent to users, integrated into a browser extension, or integrated into user-agent itself, this script will need to:
+* [ ] minify components
+* [ ] hash the minified component to check if the hash is the same
+* [ ] verify the signatures against a public key infrastructure
+* [ ] implement several alternative actions of how to manage trusted or untrusted components
+* [ ] provide a usable interface that allows for user decision making
