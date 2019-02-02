@@ -120,3 +120,5 @@ A javascript script needs to be sent to users, integrated into a browser extensi
 * [ ] &nbsp;verify the signatures against a public key infrastructure
 * [ ] &nbsp;implement several alternative actions of how to manage trusted or untrusted components
 * [ ] &nbsp;provide a usable interface that allows for user decision making
+
+<style>.task-list{list-style: none;}</style>
