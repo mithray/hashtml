@@ -43,19 +43,20 @@ It's true that no web page is identical( \**cough*\* ...bootstrap), yet HashTML 
 The minification should either follow a specified standard of minification, or provide a link to a place where the minification rules are specified, so the user agents, or scripts for verification sent to the user, are able to minify the HashTML element and derive the hash and check the signatures automatically on the client side. 
 
 So far the process goes as follows:
-1. Identify each element of the html file with a `class="HashTML"`
-1. Remove textContent of that element
-2. Remove Variables.
-3. Remove Empty CSS Tags, ids, classes(standard css should be left in, as it hiding elements with css could have security vulnerabilities, instead, the component community should use variables to change the component styling)
-4. Pass through html-minifier
-5. InnerHTML is extracted from the parent component.
-6. Hash the minified component (and sign the hash, which is not implemented)
-7. Add the hash to the original unminified component
-8. Integrate the component into your app, including minifying any way you see fit for production
+1. Take/retrieve an HTML document or component
+2. Identify each element of the html file with a `class="hashtml"`
+3. InnerHTML is extracted from the parent component.
+4. Remove textContent of that element
+5. Remove Variables.
+6. Remove Empty CSS Tags, ids, classes(standard css should be left in, as it hiding elements with css could have security vulnerabilities, instead, the component community should use variables to change the component styling)
+7. Pass through html-minifier
+8. Hash the minified component (and sign the hash, which is not implemented)
+9. Add the hash to the original unminified component
+10. Integrate the component into your app, including minifying any way you see fit for production
 
-Following the above process takes you from this:
+An example html component in step 1 from above may look like this:
 ``` html
-<nav class="HashTML">
+<nav class="hashtml">
 	<style>
 		nav {
 			--main-bg-color: rgb(40,40,40);
@@ -74,11 +75,19 @@ Following the above process takes you from this:
 </nav>
 ```
 
-To a resulting minified, html component such as below:
+The resulting minified innerHTML of this component in step 7 will look something like below, note, there is no outer `<nav>` tag. The hashes and the signatures are added to the `<nav>` tag and therefore cannot be part of the hash.
 
 ``` html
-<nav class="HashTML" integrity="f3bd8e3a82b..." signature="4ubkf7..."><style>nav{background-color: var(--main-bg-color);color: var(--main-font-color);}</style><ul><li></li><li></li><li></li></ul></nav>
+<style>nav{background-color: var(--main-bg-color);color: var(--main-font-color);}</style><ul><li></li><li></li><li></li></ul>
 ```
+
+The hash from step 8 is then taken and added to the original, unminified host element from step 2. in this example it is the `<nav>` tag.
+
+``` html
+<nav class="hash" integrity="f3bd8e3a82b..." signature="4ubkf7..."><style>nav{background-color: var(--main-bg-color);color: var(--main-font-color);}</style><ul><li></li><li></li><li></li></ul></nav>
+```
+
+The process is repeated for all elements identified in step 1. The output is then hashed (in the future signatures will be added) and ready to integrate into your app.
 
 ## <a name="client_use"></a>[Client Use](#toc)
 *not implemented*
@@ -120,5 +129,3 @@ A javascript script needs to be sent to users, integrated into a browser extensi
 * [ ] &nbsp;verify the signatures against a public key infrastructure
 * [ ] &nbsp;implement several alternative actions of how to manage trusted or untrusted components
 * [ ] &nbsp;provide a usable interface that allows for user decision making
-
-<style>.task-list{list-style: none;}</style>
