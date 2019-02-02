@@ -1,6 +1,6 @@
-# HashTML
+# [HashTML](#)
 
-## <a name="toc"></a> Contents
+## <a name="toc"></a> [Contents](#toc)
 
 1. [Summary](#summary)
 2. [Basic Use](#basic_use)
@@ -103,13 +103,14 @@ To be fully compliant, an HTML document must include at minimum a hash and a sig
 
 ### Server Use
 
-* implemented signing components with private keys
-* link to component libraries
+* [x] implement hashing of components
+* [] implement signing of components with private keys
+* [] link to component libraries
 
 ### Client Use
 
-* Include javascript scripts to send to users, these are sent in the build step, but executed by the user agents. These scripts can
-	* minify components
-	* hash the minified component to check if the hash is the same
-	* verify the signatures against a public key infrastructure
-	* implement several alternative actions of how to manage trusted or untrusted components
+* [] include javascript scripts to send to users, these are sent in the build step, but executed by the user agents. These scripts can
+	* [] minify components
+	* [] hash the minified component to check if the hash is the same
+	* [] verify the signatures against a public key infrastructure
+	* [] implement several alternative actions of how to manage trusted or untrusted components
