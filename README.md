@@ -115,10 +115,12 @@ To be fully compliant, an HTML document must include at minimum a hash and a sig
 The Server hashing and signing of components need to be easy enough that it is not a burden to developers to implement, otherwise it will not be done. This requires building hashing, and signing, of components from public repositories. 
 
 * [x] &nbsp;hashing of components
-* [ ] &nbsp;signing of components with private keys
-	* [ ] &nbsp;npm key
-	* [ ] &nbsp;github key
-	* [ ] &nbsp;custom key
+* [ ] &nbsp;make the package available as a module(in addition to global cli tool)
+* [ ] &nbsp;key management & use - interface to [KMIP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=kmip)
+	* [ ] &nbsp;creating keys
+	* [ ] &nbsp;retrieving keys
+	* [ ] &nbsp;publishing keys
+	* [ ] &nbsp;signing of components with private keys
 * [ ] &nbsp;integration with component libraries
 
 ### Client Use
@@ -129,3 +131,8 @@ A javascript script needs to be sent to users, integrated into a browser extensi
 * [ ] &nbsp;verify the signatures against a public key infrastructure
 * [ ] &nbsp;implement several alternative actions of how to manage trusted or untrusted components
 * [ ] &nbsp;provide a usable interface that allows for user decision making
+* [ ] &nbsp;key management & use - partial interface to [KMIP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=kmip)
+	* [ ] &nbsp;retrieving keys
+	* [ ] &nbsp;?? publishing/saving keys[could be possible for user agents to help store keys with a decentralized database]
+	* [ ] &nbsp;?? Could we use user agent verification of elements? creating keys
+	* [ ] &nbsp;?? signing of components with private keys
